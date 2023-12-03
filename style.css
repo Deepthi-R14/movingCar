@@ -1,81 +1,86 @@
 *{
     margin: 0;
-    padding: 0; 
+    padding: 0;
 }
 body{
-overflow: hidden;
+    overflow: hidden;
+    animation: shakebody linear 6s infinite;
 }
 .sky{
     height: 100vh;
     width: 100%;
-    position: absolute;
-    background-image: url(./asset/background.jpg);
+    background-image: url(background.jpg);
     background-repeat: no-repeat;
-}
-.trees{
-    width: 100%;
-    height: 100vh;
-    background-image: url(./asset/trees.png);
-    background-size: cover;
     position: absolute;
-    top: -88px;
+}
 
+.trees{
+    height: 100vh;
+    width: 100%;
+    background-image: url(trees.png);
+    background-size: cover; 
+    position: absolute;
+    top: -144px; 
 }
 .track{
-    width: 600vw;
     height: 60vh;
-    background-image: url(./asset/track.png);
-    /* background-size: cover; */
-    background-repeat: repeat-x;
+    width: 800vw;
+    background-image: url(track.png);
+    background-repeat: repeat-x; 
     position: absolute;
-    top: 82vh;
-    animation: carmove linear 6s infinite;
+    top: 70vh;
+    animation: carMove linear 13s infinite;
+
 }
+
 .car{
     height: 100px;
-    width: 320px;
-    background-image: url(./asset/car_body.png);
+    width: 380px;
+    background-image: url(car_body.png);
     background-size: cover;
-    background-repeat: no-repeat ;
+    background-repeat: no-repeat;
     position: absolute;
-    left: 15vw;
-    bottom: 14vh;
-    animation: shake linear 2s infinite  ;
-}
-.wheel img{
- width: 64px;
- animation: wheelrotate linear .6s infinite;
+    left: 444px;
+    bottom:30vh;
+    animation: shake linear .3s infinite;
 
 }
 
-.wheel1{
-    height: 11px;
-    width: 11px;
+
+.wheel1 img{
+    width: 77px;
     position: relative;
-    top: 5.5vh;
-    left: 3.4vw;
+    top:42px;
+    left:42px;
+    animation: wheelRotation linear .16s infinite;
 }
 
-.wheel2{
-    height: 8px;
-    width: 10px;
+
+.wheel2 img{
+    width: 77px;
     position: relative;
-    top: 30px;
-    left: 16.34vw;
+    top: -39px;
+    left: 235px;
+    animation: wheelRotation linear .16s infinite;
+
 }
 
-@keyframes wheelrotate 
+@keyframes wheelRotation
 {
     100%{
         transform: rotate(360deg);
     }
 }
-@keyframes carmove {
+
+@keyframes carMove
+{
     100%{
         transform: translateX(-500vw);
     }
 }
-@keyframes shake {
+
+@keyframes shake
+{
     0%{
         transform: translateY(-5px);
     }
@@ -84,5 +89,17 @@ overflow: hidden;
     }
     100%{
         transform: translateY(-5px);
+    }
+}
+@keyframes shakebody
+{
+    0%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(-50px);
     }
 }
